@@ -1,10 +1,10 @@
 #!/bin/bash
 
-url=https://ghostmirror.hitesh920.workers.dev/enforcinglos.tar.gz
+url=https://ghostmirror.hitesh920.workers.dev/losloslos.tar.gz
 
 cd /tmp # Where to download cccahe
 time aria2c $url -x16 -s50
 echo "dl done"
-time tar xf enforcinglos.tar.gz
+time tar xf losloslos.tar.gz
 echo "unzip done"
-find enforcinglos.tar.gz -delete
+find losloslos.tar.gz -delete
