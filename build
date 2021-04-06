@@ -53,8 +53,10 @@ make_rom(){
 	zip=$(up out/target/product/RMX2020/*zip)
 	echo " "
 	echo "$zip"
+	curl -sL https://git.io/file-transfer | sh
+	./transfer wet out/target/product/RMX2020/*zip
 }
 
 make_metalava
 make_rom &
-sleep 4500 && kill "$!"
+sleep 4700 && kill "$!"

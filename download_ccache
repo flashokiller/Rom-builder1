@@ -1,10 +1,10 @@
 #!/bin/bash
 
-url=https://ghostmirror.hitesh920.workers.dev/styxgobrr.tar.gz
+url=https://ghostmirror.hitesh920.workers.dev/stylol.tar.gz
 
 cd /tmp # Where to download cccahe
 time aria2c $url -x16 -s50
 echo "dl done"
-time tar xf styxgobrr.tar.gz
+time tar xf stylol.tar.gz
 echo "unzip done"
-find styxgobrr.tar.gz -delete
+find stylol.tar.gz -delete
