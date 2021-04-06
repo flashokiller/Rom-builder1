@@ -21,6 +21,9 @@ cd frameworks/base
 wget https://raw.githubusercontent.com/SamarV-121/android_vendor_extra/lineage-18.1/patches/frameworks/base/0008-WifiManager-Add-StaState-API.patch
 patch -p1 < *.patch
 cd /tmp/rom
+rm -rf vendor/mediatek/ims/packages/EngineerMode
+rm -rf vendor/mediatek/ims/packages/ImsService
+cd /tmp/rom
 source build/envsetup.sh
 lunch styx_RMX2020-userdebug
 export SKIP_API_CHECKS=true
@@ -40,9 +43,9 @@ up(){
 }
 
 make_metalava(){
-	mka api-stubs-docs
-	mka system-api-stubs-docs
-	mka test-api-stubs-docs
+	m api-stubs-docs
+	m system-api-stubs-docs
+	m test-api-stubs-docs
 }
 
 make_rom(){
