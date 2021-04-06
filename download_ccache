@@ -1,10 +1,10 @@
 #!/bin/bash
 
-url=https://ghostmirror.hitesh920.workers.dev/enforceme.tar.gz
+url=https://ghostmirror.hitesh920.workers.dev/styxgobrr.tar.gz
 
 cd /tmp # Where to download cccahe
 time aria2c $url -x16 -s50
 echo "dl done"
-time tar xf enforceme.tar.gz
+time tar xf styxgobrr.tar.gz
 echo "unzip done"
-find enforceme.tar.gz -delete
+find styxgobrr.tar.gz -delete
