@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo apt install wget
-MANIFEST=git://github.com/ForkLineageOS/android.git
-BRANCH=lineage-18.1  
+MANIFEST=https://github.com/StyxProject/manifest
+BRANCH=R  
 
 mkdir -p /tmp/rom
 cd /tmp/rom
@@ -18,10 +18,7 @@ pwd
 ls
 
 ##delete these lines, and replace with your own lines of device sauce
-git clone https://github.com/Realme-G95-Series/proprietary_vendor_realme.git vendor/realme
-git clone https://github.com/SamarV-121/android_device_realme_RMX2151.git device/realme/RMX2151
-git clone https://github.com/SamarV-121/android_device_realme_mt6785-common.git device/realme/mt6785-common
-git clone https://github.com/PixelExperience/vendor_mediatek_ims vendor/mediatek/ims
-git clone https://github.com/PixelExperience/vendor_mediatek_interfaces vendor/mediatek/interfaces
+git clone https://github.com/Realme-G70-Series/vendor_realme_RMX2020.git vendor/realme/RMX2020
+git clone https://github.com/sarthak2002/device_realme_RMX2020.git device/realme/RMX2020
 
 cd /tmp/rom
