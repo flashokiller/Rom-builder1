@@ -18,7 +18,7 @@ pwd
 ls
 
 ##delete these lines, and replace with your own lines of device sauce
-git clone https://github.com/sarthak2002/vendor_realme_RMX2020.git vendor/realme/RMX2020
-git clone https://github.com/sarthak2002/device_realme_RMX2020.git device/realme/RMX2020
+git clone https://github.com/Realme-G70-Series/vendor_realme_RMX2020.git vendor/realme/RMX2020
+git clone https://github.com/Dumpyard-Sarthak/device_realme_RMX2020.git device/realme/RMX2020
 
 cd /tmp/rom
