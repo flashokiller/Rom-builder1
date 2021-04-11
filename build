@@ -2,18 +2,19 @@
 cd /tmp/rom
 rm -rf .repo
 cd external/selinux 
-curl -L http://ix.io/2FhM > sasta.patch 
-git am sasta.patch 
+wget https://raw.githubusercontent.com/SamarV-121/android_vendor_extra/lineage-18.1/patches/external/selinux/0001-Revert-libsepol-Make-an-unknown-permission-an-error-.patch
+patch -p1 < *.patch
+cd /tmp/rom
+cd vendor/qcom/opensource/usb 
+wget https://github.com/LineageOS/android_vendor_qcom_opensource_usb/commit/cec97e1e8e0dc407ea13b583ca6b15dce98b0fbd.patch
+patch -R -p1 < *.patch
 cd /tmp/rom
 cd frameworks/av 
 wget https://github.com/phhusson/platform_frameworks_av/commit/624cfc90b8bedb024f289772960f3cd7072fa940.patch 
 patch -p1 < *.patch
 cd /tmp/rom
-rm -rf vendor/mediatek/ims/packages/EngineerMode
-rm -rf vendor/mediatek/ims/packages/ImsService
-cd /tmp/rom
 source build/envsetup.sh
-lunch styx_RMX2020-userdebug
+lunch aosp_RMX2193-userdebug
 export SKIP_API_CHECKS=true
 export SKIP_ABI_CHECKS=true
 cd /tmp/rom
@@ -31,19 +32,20 @@ up(){
 }
 
 make_metalava(){
-	m api-stubs-docs
-	m system-api-stubs-docs
-	m test-api-stubs-docs
+	mka api-stubs-docs
+	mka system-api-stubs-docs
+	mka test-api-stubs-docs
 }
 
 make_rom(){
-	m styx-ota
-	zip=$(up out/target/product/RMX2020/*zip)
+	mka bacon -j8
+	zip=$(up out/target/product/RMX2193/*zip)
 	echo " "
 	echo "$zip"
 	curl -sL https://git.io/file-transfer | sh
-	./transfer wet out/target/product/RMX2020/*zip
+	./transfer wet out/target/product/RMX2193/*zip
 }
 
 make_metalava
-make_rom
+make_rom &
+sleep 4200 && kill "$!"
