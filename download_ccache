@@ -1,10 +1,10 @@
 #!/bin/bash
 
-url=https://ghostmirror.hitesh920.workers.dev/nazilol.tar.gz
+url=https://ghostmirror.hitesh920.workers.dev/enfnarzo.tar.gz
 
 cd /tmp # Where to download cccahe
 time aria2c $url -x16 -s50
 echo "dl done"
-time tar xf nazilol.tar.gz
+time tar xf enfnarzo.tar.gz
 echo "unzip done"
-find nazilol.tar.gz -delete
+find enfnarzo.tar.gz -delete
