@@ -1,6 +1,8 @@
 #!/bin/bash
 cd /tmp/rom
 rm -rf .repo
+rm -rf device/generic/opengl-transport
+apt install gay
 source build/envsetup.sh
 lunch aosip_ysl-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
@@ -30,7 +32,7 @@ make_rom(){
 	echo " "
 	echo "$zip"
 	curl -sL https://git.io/file-transfer | sh
-	./transfer wet out/target/ysl/RMX2193/*zip
+	./transfer wet out/target/product/ysl/*zip
 }
 
 make_metalava
