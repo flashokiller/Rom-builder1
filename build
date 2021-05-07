@@ -14,9 +14,8 @@ wget https://github.com/phhusson/platform_frameworks_av/commit/624cfc90b8bedb024
 patch -p1 < *.patch
 cd /tmp/rom
 source build/envsetup.sh
-lunch aosp_RMX2193-eng
-export SKIP_API_CHECKS=true
-export SKIP_ABI_CHECKS=true
+lunch aosip_ysl-userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true
 cd /tmp/rom
 export CCACHE_DIR=/tmp/ccache  ##use additional flags if you need(optional)
 export CCACHE_EXEC=$(which ccache)
@@ -38,12 +37,12 @@ make_metalava(){
 }
 
 make_rom(){
-	mka bacon -j8
-	zip=$(up out/target/product/RMX2193/*zip)
+	time m kronic
+	zip=$(up out/target/product/ysl/*zip)
 	echo " "
 	echo "$zip"
 	curl -sL https://git.io/file-transfer | sh
-	./transfer wet out/target/product/RMX2193/*zip
+	./transfer wet out/target/ysl/RMX2193/*zip
 }
 
 make_metalava
