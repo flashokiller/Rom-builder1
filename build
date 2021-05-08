@@ -2,7 +2,7 @@
 cd /tmp/rom
 rm -rf .repo
 rm -rf device/generic/opengl-transport
-apt install gay
+apt install dir
 source build/envsetup.sh
 lunch aosip_ysl-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
